@@ -1,5 +1,6 @@
 package tema4arrays;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Ejercicio02 {
 
@@ -20,10 +21,18 @@ public class Ejercicio02 {
 		Scanner sc = new Scanner(System.in);
 		
 		// Creamos el for que en el mismo bucle, pedirá los valores y los meterá en el Array.
-		/* Lo hacemos así para luego poder meter el valor en cada posición de la tabla. */
+		/* Hacemos un break en el for si detecta un error para que así se detenga el código
+		 * por completo si el usuario mete un valor que no debe. */
 		for(int i = 0; i < tabla.length; i++) {
-			System.out.println("Intrdozca un valor: ");
-			userValue = sc.nextInt();
+			try {
+				System.out.println("Intrdozca un valor: ");
+				userValue = sc.nextInt();
+			}catch(InputMismatchException e) {
+				sc.nextLine();
+				System.err.println("Error. Has introducido un valor que no es un número entero.");
+				break;
+			}
+			
 			
 			tabla[i] = userValue;
 		}
