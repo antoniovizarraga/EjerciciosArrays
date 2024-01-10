@@ -35,7 +35,7 @@ public class Ejercicio07 {
 		for(int i = 0; i < tabla.length; i++) {
 			// Imprimimos el nombre del mes y un separador
 			System.out.print(calendario[i] + " | ");
-			// Por cada grado de temperatura, imprimimos un asterisco
+			// Imprimimos un número de asteriscos igual al valor que haya en la tabla
 			for(int j = 0; j < tabla[i]; j++) {
 				System.out.print("*");
 			}
